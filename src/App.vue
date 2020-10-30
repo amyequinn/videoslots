@@ -1,26 +1,25 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <h3 class="">Image Gallery</h3>
+    <images-list-main/>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ImagesListMain from "./components/image-card/image-card-component.vue";
 
 export default {
-  name: 'App',
+  name: "app",
   components: {
-    HelloWorld
+    ImagesListMain
   }
-}
+};
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+font-family: 'Avenir';
+color: grey;
+text-align: center;
 }
 </style>
