@@ -1,31 +1,4 @@
-<div class="form-class">
-  <form>
-  <label for="pageNumbers">Choose how many pages to display:</label>
-  <select @change="handlePages" name="pages" class="form-control" id="pageNumbers">
-  <option>--- Select Maximum Pages ---</option>
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-    <option value="6">6</option>
-    <option value="7">7</option>
-    <option value="8">8</option>
-    <option value="9">9</option>
-    <option value="10">10</option>
-  </select>
-  <br><br>
-</form>
+<ImagesMenu @send-data="fetchImages"/>
 
-<form>
-<label for="imageNumbers">Choose how many images to display:
-<input type="number" @keydown.enter="handleImages" form="imageNumbers" id="imageNumbers" min="1" max="100" name="images" class="form-control" @submit="handleImages">
-</label>
-<button @click="handleImages" form="imageNumbers">Submit</button>
-</form>
+<div class="container image-list">
 </div>
-
-
-      <div class="container image-list">
-
-      </div>

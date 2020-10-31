@@ -1,6 +1,7 @@
 <template src="./image-card-component.html"></template>
 
 <script>
+import ImagesMenu from "../image-menu/image-menu-component.vue";
 
 export default {
 /* eslint-disable */
@@ -9,40 +10,34 @@ export default {
   data() {
     return {
       data: Object,
-      totalPages: 2,
-      totalImages: 50
     }
   },
-  methods: {
-
-    handlePages: function(event){
-      this.totalPages = event.target.value
-      console.log(this.totalPages)
-      this.fetchImages()
+  props: {
+  totalPages: Number,
+  totalImages: Number
+  },
+    components: {
+      ImagesMenu
     },
+  methods: {
+      fetchImages: function(totalPages, totalImages) {
+  
+          let api = `https://picsum.photos/v2/list?page=${totalPages}l&limit=${totalImages}`
 
-    handleImages: function(event){
-
-      let inputValue = document.getElementById("imageNumbers").value;
-      this.totalImages = inputValue;
-      console.log(this.totalImages);
-      this.fetchImages();
-      },
-      
-      fetchImages: function() {
-
-          let api = `https://picsum.photos/v2/list?page=${this.totalPages}l&limit=${this.totalImages}`
           fetch(api)
           .then(response => response.json())
 
           .then(data => (
           this.data = data,
-          console.log(this.data)
+          console.log(data)
+
           ));
       },
   },
     created(){
-    this.fetchImages()
+
+    console.log("started")
+
     }
 };
 

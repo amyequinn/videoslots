@@ -2,6 +2,8 @@
   <div id="app">
     <h3 class="">Image Gallery</h3>
     <images-list-main/>
+
+
   </div>
 </template>
 
