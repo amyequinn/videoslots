@@ -1,26 +1,4 @@
-<template>
-<div class="form-class">
-  <form>
-  <label for="cars">Choose how many images to display:</label>
-  <select name="pages" class="form-control" id="pageNumbers">
-  <option>--- Select Maximum Pages ---</option>
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-    <option value="6">6</option>
-    <option value="7">7</option>
-    <option value="8">8</option>
-    <option value="9">9</option>
-    <option value="10">10</option>
-  </select>
-  <br><br>
-  <input type="submit" value="Submit">
-</form>
-</div>
-      <div class="container image-list">
-      </div>
+<template src="./image-card-component.html">
 
 </template>
 
@@ -39,7 +17,6 @@ export default {
     }
   },
 
-
   async created() {
       let imageElement, imageRow, imageAuthor, imageID, imageSrc, imageLink;
 
@@ -51,7 +28,7 @@ export default {
       .then(response => response.json())
 
       .then(data => (
-
+      console.log(data),
       data.forEach(el => {
 
         this.id = el.id,
@@ -87,73 +64,6 @@ export default {
 };
 </script>
 
-<style>
-
-.image-list{
-  border-width: 0;
-  border-style: solid;
-  border-color: grey;
-  box-sizing: inherit;
-
-}
-.container{
-width: calc(100vw);
-}
-
-@media(min-width: 1200px){
-.container{
-max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-}
-}
-
-@media (min-width: 992px){
-.container{
-  padding-top: 30px;
-  flex-wrap: wrap;
-  display: flex;
-  margin-left: auto;
-  margin-right: auto;
-}
-}
-
-@media (min-width: 768px){
-.container{
-  flex-wrap: wrap;
-  display: flex;
-  margin-left: auto;
-  margin-right: auto;
-}
-}
-
-
-.image-element{
-width: 30%;
-margin-left: 1rem;
-margin-right: 1rem;
-text-align: center;
-margin-bottom: 2rem;
-border-width: 0;
-border-style: solid;
-border-color: grey;
-box-sizing: inherit;
-display: block;
-overflow: hidden;
-border-radius: .25rem;
-box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-}
-
-
-@media (max-width: 992px){
-.image-element{
-  width: 40%;
-}
-}
-@media (max-width: 768px){
-.image-element{
-  width: 100%;
-}
-}
+<style src="./image-card-component.css">
 
 </style>
