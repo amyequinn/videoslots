@@ -7,40 +7,37 @@ export default {
 /* eslint-disable */
 
   name: "images-menu",
+
   props: {
     method: { type: Function},
   },
+
   data() {
-  return{
-  totalPages: 10,
-  totalImages: 20
-  }
+    return{
+      totalPages: 10,
+      totalImages: 20
+    }
   },
 
-    mounted(){
-
+  mounted(){
     this.$emit('send-data', this.totalPages, this.totalImages)
+  },
 
-
-    },
   components: {
     ImagesListMain
   },
+
   methods: {
     handlePages: function(event){
     this.$emit('send-data', this.totalPages, this.totalImages)
-
-
     },
 
-    handleImages: function(event){
-      let total = document.getElementById('imageNumbers').value
-      if(total > 0 && total <= 100){
-        this.$emit('send-data', this.totalPages, this.totalImages)
-      }
-
-      },
-
+  handleImages: function(event){
+    let total = document.getElementById('imageNumbers').value
+    if(total > 0 && total <= 100){
+    this.$emit('send-data', this.totalPages, this.totalImages)
+    }
+    },
   },
 };
 

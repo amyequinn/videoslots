@@ -1,28 +1,33 @@
 
-<div class="form-class">
-  <form>
-    <label for="pageNumbers">Choose how many pages to display:</label>
-    <select v-model="totalPages" @change="handlePages" name="pages" class="form-control" id="pageNumbers">
-      <option>--- Select Maximum Pages ---</option>
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-      <option value="6">6</option>
-      <option value="7">7</option>
-      <option value="8">8</option>
-      <option value="9">9</option>
-      <option value="10">10</option>
-    </select>
-    <br><br>
-  </form>
+<button class="left-btn" id="prev" rel="prev" data-page="pageNumber">Prev</button>
+<button class="right-btn" id="next" rel="prev" data-page="pageNumber+1">Next</button>
 
-  <form>
-    <label for="imageNumbers">Choose how many images to display:
-      <input v-model="totalImages" type="number" @keydown.enter="handleImages" form="imageNumbers" id="imageNumbers" min="1" max="100" name="images" class="form-control">
+<div class="row form-class">
+  <div class="form-class column">
+    <form class="pages-form">
+      <label for="pageNumbers">Pages </label>
+      <select v-model="totalPages" @change="handlePages" name="pages" class="form-control" id="pageNumbers">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+      </select>
+      <br><br>
+    </form>
+    </div>
+
+  <form class="images-form">
+    <label for="imageNumbers">Images
+      <input v-model="totalImages" type="number" @keydown.enter="handleImages" form="imageNumbers" id="imageNumbers" min="1" max="100" name="images" class="input">
     </label>
-    <button @click="handleImages" form="imageNumbers">Submit</button>
+    <div class="btn-row">
+    <button @click="handleImages" form="imageNumbers">Load</button>
+    </div>
   </form>
-
-</div>
+  </div>

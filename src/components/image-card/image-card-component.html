@@ -1,11 +1,12 @@
 <ImagesMenu @send-data="fetchImages"/>
 
-<div class="container image-list" v-for="(image) in data">
-
-    <div row="">
-      <h1>{{image.id}}</h1>
-      <h1>{{image.author}}</h1>
-    <img v-bind:src="image.download_url.slice(0, this.image.length-10) + '/367/267'" />
+<div class="container image-list">
+    <div class="row image-card" v-for="(image) in data">
+    <a v-bind:href="image.download_url.slice(0, this.image.length-10) + '/367/267'" target="_blank">
+    <img class="image" v-bind:src="image.download_url.slice(0, this.image.length-10) + '/367/267'" />
+    </a>
+    <h1 class="id">{{image.id}}</h1>
+    <h1 class="author">{{image.author}}</h1>
     </div>
 
 </div>
