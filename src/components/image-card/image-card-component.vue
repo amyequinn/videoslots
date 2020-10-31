@@ -22,19 +22,13 @@ export default {
     },
 
     handleImages: function(event){
+
       let inputValue = document.getElementById("imageNumbers").value;
       this.totalImages = inputValue;
       console.log(this.totalImages);
       this.fetchImages();
       },
-      keymonitor: function(e){
-        if (e.keyCode == 13) {
-        e.preventDefault();
-        alert('Click Submit')
-        return false;
-        }
-      },
-
+      
       fetchImages: function() {
 
           let api = `https://picsum.photos/v2/list?page=${this.totalPages}l&limit=${this.totalImages}`

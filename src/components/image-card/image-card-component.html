@@ -19,7 +19,7 @@
 
 <form>
 <label for="imageNumbers">Choose how many images to display:
-<input type="number" @keydown="keymonitor" id="imageNumbers" min="1" max="100" name="images" class="form-control" @submit="handleImages">
+<input type="number" @keydown.enter="handleImages" form="imageNumbers" id="imageNumbers" min="1" max="100" name="images" class="form-control" @submit="handleImages">
 </label>
 <button @click="handleImages" form="imageNumbers">Submit</button>
 </form>
