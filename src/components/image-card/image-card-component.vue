@@ -1,6 +1,4 @@
-<template src="./image-card-component.html">
-
-</template>
+<template src="./image-card-component.html"></template>
 
 <script>
 
@@ -11,33 +9,37 @@ export default {
   data() {
     return {
       data: Object,
-      totalPages: '',
-      totalImages: ''
-
+      totalPages: 2,
+      totalImages: 50
     }
   },
   methods: {
-    handleClick: function(event){
+
+    handlePages: function(event){
     this.totalPages = event.target.value
     this.fetchImages()
     },
+      handleImages: function(event){
+      this.totalImages = event.target.value
+      this.fetchImages()
+      },
+
       fetchImages: function() {
-
-          let imageTotal = 10;
-
-          let api = `https://picsum.photos/v2/list?page=${this.totalPages}l&limit=${imageTotal}`
+        console.log("Total pages = " + this.totalPages);
+        console.log("Total images = " + this.totalImages);
+          let api = `https://picsum.photos/v2/list?page=${this.totalPages}l&limit=${this.totalImages}`
           fetch(api)
           .then(response => response.json())
 
           .then(data => (
-          this.data = data
-
+          this.data = data,
+          console.log(this.data)
           ));
-
       }
   },
-
-
+    created(){
+    this.fetchImages()
+    }
 };
 
 </script>
