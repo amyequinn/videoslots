@@ -16,17 +16,27 @@ export default {
   methods: {
 
     handlePages: function(event){
-    this.totalPages = event.target.value
-    this.fetchImages()
-    },
-      handleImages: function(event){
-      this.totalImages = event.target.value
+      this.totalPages = event.target.value
+      console.log(this.totalPages)
       this.fetchImages()
+    },
+
+    handleImages: function(event){
+      let inputValue = document.getElementById("imageNumbers").value;
+      this.totalImages = inputValue;
+      console.log(this.totalImages);
+      this.fetchImages();
+      },
+      keymonitor: function(e){
+        if (e.keyCode == 13) {
+        e.preventDefault();
+        alert('Click Submit')
+        return false;
+        }
       },
 
       fetchImages: function() {
-        console.log("Total pages = " + this.totalPages);
-        console.log("Total images = " + this.totalImages);
+
           let api = `https://picsum.photos/v2/list?page=${this.totalPages}l&limit=${this.totalImages}`
           fetch(api)
           .then(response => response.json())
@@ -35,7 +45,7 @@ export default {
           this.data = data,
           console.log(this.data)
           ));
-      }
+      },
   },
     created(){
     this.fetchImages()
