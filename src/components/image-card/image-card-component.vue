@@ -21,7 +21,7 @@ export default {
     },
   methods: {
       fetchImages: function(totalPages, totalImages) {
-  
+
           let api = `https://picsum.photos/v2/list?page=${totalPages}l&limit=${totalImages}`
 
           fetch(api)
@@ -29,14 +29,24 @@ export default {
 
           .then(data => (
           this.data = data,
-          console.log(data)
-
+          console.log(data),
+          this.renderImages(data)
           ));
       },
-  },
-    created(){
+        renderImages: function(data){
 
-    console.log("started")
+          data.forEach (el => {
+          this.id  = el.id,
+          this.author= el.author,
+          this.image = el.download_url,
+          this.image = el.download_url.slice(0, this.image.length-10),
+          this.image = this.image + "/367/267"
+
+          })
+        }
+  },
+
+    created(){
 
     }
 };
