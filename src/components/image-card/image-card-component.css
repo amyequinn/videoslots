@@ -19,12 +19,18 @@ background-color: white;
 .image-card{
 background: white;
 text-align: center;
-border: 0px solid #4B5043;
+border: 0px solid #e5989b;
 margin: 2rem;
 font-size: 1.25rem;
 border-radius: .25rem;
-box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+box-shadow: 0 10px 20px rgba(0,0,0,0.2), 0 6px 6px rgba(0,0,0,0.3);
 overflow: hidden;
+}
+
+.image-card:hover{
+border: 5px solid #e5989b;
+border-radius: 2%;
+opacity: 90%;
 }
 
 .id, .author{

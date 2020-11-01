@@ -1,11 +1,9 @@
 <template>
   <section id="app">
-  <container>
     <div class="header">
     <h3 class="">Image Gallery</h3>
     </div>
     <images-list-main/>
-    </container>
   </section>
 </template>
 
@@ -23,20 +21,21 @@ export default {
 <style>
 body{
 background: #9bc4bc;
+padding:0px;
+margin:0px;
 
 }
 .header{
 font-family: 'Avenir';
 background: #d3ffe9;
-opacity: 75%;
 color: #4b5043;
-margin-top: 2rem!important;
-font-size: 1.5rem;
+font-size: 2rem;
 text-align: center;
-width: 85%;
 display: flex;
 justify-content: center;
-margin: auto;
+margin-left: 0 auto;
+
+
 
 
 }
