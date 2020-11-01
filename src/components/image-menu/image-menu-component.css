@@ -4,12 +4,19 @@
   width: 100%;
 }
 .left-btn, .right-btn{
-    background: #D3D3D3;
+    background: white;
     border-radius: 2rem;
     padding: 1rem;
     margin: 1rem;
     font-size: 1rem;
 }
+
+.left-btn:hover, .right-btn:hover, .load-btn:hover{
+  background: #D3D3D3;
+  cursor: pointer;
+}
+
+
 
 .form-class {
   font-weight: bold;

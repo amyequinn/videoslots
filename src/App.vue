@@ -1,10 +1,12 @@
 <template>
-  <div id="app">
+  <section id="app">
+  <container>
+    <div class="header">
     <h3 class="">Image Gallery</h3>
+    </div>
     <images-list-main/>
-
-
-  </div>
+    </container>
+  </section>
 </template>
 
 <script>
@@ -19,9 +21,23 @@ export default {
 </script>
 
 <style>
-#app {
+body{
+background: #9bc4bc;
+
+}
+.header{
 font-family: 'Avenir';
-color: grey;
+background: #d3ffe9;
+opacity: 75%;
+color: #4b5043;
+margin-top: 2rem!important;
+font-size: 1.5rem;
 text-align: center;
+width: 85%;
+display: flex;
+justify-content: center;
+margin: auto;
+
+
 }
 </style>

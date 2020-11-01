@@ -1,11 +1,10 @@
 <template src="./image-card-component.html"></template>
 
 <script>
-
 import ImagesMenu from "../image-menu/image-menu-component.vue";
 
 export default {
-/* eslint-disable */
+  /* eslint-disable */
 
   name: "images-list-main",
   data() {
@@ -17,34 +16,26 @@ export default {
     }
   },
   props: {
-  totalPages: Number,
-  totalImages: Number
+    totalPages: Number,
+    totalImages: Number
   },
-    components: {
-      ImagesMenu
-    },
+  components: {
+    ImagesMenu
+  },
   methods: {
-      fetchImages: function(totalPages, totalImages) {
+    fetchImages: function(totalPages, totalImages) {
 
-          let api = `https://picsum.photos/v2/list?page=${totalPages}l&limit=${totalImages}`
+      let api = `https://picsum.photos/v2/list?page=${totalPages}l&limit=${totalImages}`
 
-          fetch(api)
-          .then(response => response.json())
+      fetch(api)
+        .then(response => response.json())
 
-          .then(data => (
+        .then(data => (
           this.data = data
-          ));
-      },
+        ));
+    },
 
-  },
-
-    created(){
-
-    }
+  }
 };
-
 </script>
-
-<style src="./image-card-component.css">
-
-</style>
+<style src = "./image-card-component.css"></style>
