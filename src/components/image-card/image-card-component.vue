@@ -54,7 +54,6 @@ export default {
 
       //determine if 'Prev' or 'Next' button can be activated
       const check = () => {
-      console.log(totalPages, totalImages)
       if(totalPages > totalImages){
       totalPages = 1;
       this.fetchImages(totalPages, totalImages)

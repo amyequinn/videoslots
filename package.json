@@ -6,7 +6,9 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "start": "vue-cli-service serve"
+    "heroku-prebuild": "npm install --dev",
+    "dev": "node server.js",
+    "heroku-postbuild": "webpack -p"
   },
   "engines": {
     "node": "12.9.0",
@@ -14,6 +16,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "express": "^4.17.1",
     "vue": "^3.0.0"
   },
   "devDependencies": {
