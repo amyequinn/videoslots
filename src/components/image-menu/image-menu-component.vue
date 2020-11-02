@@ -15,7 +15,7 @@ export default {
 
   data() {
     return {
-      totalPages: 5,
+      totalPages: 3,
       totalImages: 50
     }
   },
@@ -34,7 +34,7 @@ export default {
     },
 
     handleImagesClick: function(event) {
-      let total = document.getElementById('imageNumbers').value
+      let total = document.getElementById('imageNumbers').value;
       if (total > 0 && total <= 100) {
         this.$emit('send-data', this.totalPages, this.totalImages)
       } else {

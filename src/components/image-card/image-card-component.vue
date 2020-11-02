@@ -27,6 +27,8 @@ export default {
       if (typeof totalPages === 'undefined' || typeof totalPages === 'function') {
         return
       }
+      totalImages = parseInt(totalImages)
+
       let api = `https://picsum.photos/v2/list?page=${totalPages}l&limit=${totalImages}`
 
       await fetch(api)
@@ -52,6 +54,7 @@ export default {
 
       //determine if 'Prev' or 'Next' button can be activated
       const check = () => {
+      console.log(totalPages, totalImages)
       if(totalPages > totalImages){
       totalPages = 1;
       this.fetchImages(totalPages, totalImages)
