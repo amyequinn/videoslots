@@ -1,44 +1,73 @@
-
-.buttons{
-  text-align: end;
-  width: 100%;
-}
-.left-btn, .right-btn{
-    background: white;
-    border-radius: 2rem;
-    padding: 1rem;
-    margin: 1rem;
-    font-size: 1rem;
-}
-
-.left-btn:hover, .right-btn:hover, .load-btn:hover{
-  background: #D3D3D3;
-  cursor: pointer;
-}
-
-
-
-.form-class {
+.forms {
+  padding-top: 1rem !important;
+  text-align: right;
   font-weight: bold;
-  color: #505050;
-  text-align: left;
-
+  color: #4b5043;
+  margin-top: 1rem;
+  margin-right: 3rem;
 }
 
-.pages-form{
-  text-align:center;
-  text-align: left;
-  padding-left: 8%;
-}
-.images-form {
-  text-align:center;
-  padding-left: 8%;
-  text-align: left;
-
+.form-control {
+  padding-left: 0.7rem;
+  margin-left: 0.5rem;
 }
 
-.input{
+.input {
+  margin-left: 0.2rem;
   margin-bottom: 1rem;
-  margin-left: 0.3rem;
-  margin-right: 0.3rem;
+}
+
+.load-btn {
+  margin-right: 0 !important;
+  padding: 0.5rem !important;
+}
+
+.gallery-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  grid-template-columns: auto auto auto;
+}
+
+.pagination {
+  padding: 1rem;
+  text-align: center;
+  width: 100%;
+  float: left;
+}
+
+.pagination div {
+  display: inline-block;
+  text-align: center;
+  margin: 0 1rem;
+}
+
+.pagination .page {
+  color: #4B5043;
+}
+
+.load-btn {
+  font-size: 0.8rem !important;
+}
+
+.pagination .prev, .pagination .next, .load-btn {
+  background: #d3ffe9;
+  color: #000;
+  border: 0.1rem solid #000;
+  font-size: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding: 8px 15px;
+}
+
+.pagination .prev:hover, .pagination .next:hover, .load-btn:hover {
+  background: #e5989b;
+}
+
+.pagination .next.disabled, .pagination .prev.disabled {
+  border-color: #4B5043;
+  color: #4B5043;
+  background: white;
+  opacity: 0.3;
+  pointer-events: none;
 }

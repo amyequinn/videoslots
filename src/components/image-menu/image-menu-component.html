@@ -1,9 +1,8 @@
-
-<div class="row form-class">
-  <div class="form-class column">
-    <form class="pages-form">
-      <label for="pageNumbers">Pages </label>
-      <select v-model="totalPages" @change="handlePages" name="pages" class="form-control" id="pageNumbers">
+<div class="container">
+  <form class="forms">
+    <form class="">
+      <label for="pageNumbers">Pages</label>
+      <select v-model="totalPages" @change="handlePagesClick" name="pages" class="form-control" id="pageNumbers">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -17,14 +16,11 @@
       </select>
       <br><br>
     </form>
-    </div>
-
-  <form class="images-form">
     <label for="imageNumbers">Images
-      <input v-model="totalImages" type="number" @keydown.enter="handleImages" form="imageNumbers" id="imageNumbers" min="1" max="100" name="images" class="input">
+      <input v-model="totalImages" type="number" @keydown.enter="handleImagesClick" form="imageNumbers" id="imageNumbers" min="1" max="100" name="images" class="input">
     </label>
     <div class="btn-row">
-    <button class="load-btn" @click="handleImages" form="imageNumbers">Load</button>
+      <button class="load-btn" @click="handleImagesClick" form="imageNumbers">Load</button>
     </div>
   </form>
-  </div>
+</div>

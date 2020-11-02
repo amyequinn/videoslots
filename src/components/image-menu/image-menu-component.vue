@@ -1,25 +1,26 @@
-<template src="./image-menu-component.html"></template>
+<template src ="./image-menu-component.html"></template>
 
 <script>
 import ImagesListMain from "../image-card/image-card-component.vue";
 
 export default {
-/* eslint-disable */
+  /* eslint-disable */
 
   name: "images-menu",
-
   props: {
-    method: { type: Function},
+    method: {
+      type: Function
+    },
   },
 
   data() {
-    return{
+    return {
       totalPages: 3,
       totalImages: 27
     }
   },
 
-  mounted(){
+  mounted() {
     this.$emit('send-data', this.totalPages, this.totalImages)
   },
 
@@ -28,24 +29,20 @@ export default {
   },
 
   methods: {
-    handlePages: function(event){
-    this.$emit('send-data', this.totalPages, this.totalImages)
+    handlePagesClick: function(event) {
+      this.$emit('send-data', this.totalPages, this.totalImages)
     },
 
-  handleImages: function(event){
-    let total = document.getElementById('imageNumbers').value
-    if(total > 0 && total <= 100){
-    this.$emit('send-data', this.totalPages, this.totalImages)
-    }
-    else {
-    alert("1 - 100 only")
-    }
+    handleImagesClick: function(event) {
+      let total = document.getElementById('imageNumbers').value
+      if (total > 0 && total <= 100) {
+        this.$emit('send-data', this.totalPages, this.totalImages)
+      } else {
+        alert("1 - 100 only")
+      }
     },
   },
 };
-
 </script>
 
-<style src="./image-menu-component.css">
-
-</style>
+<style src = "./image-menu-component.css"></style>

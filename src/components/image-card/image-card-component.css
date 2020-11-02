@@ -1,3 +1,10 @@
+.container{
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+grid-template-columns: auto auto auto;
+background-color: #9bc4bc;
+}
 
 .image-list{
   background: #9bc4bc!important;
@@ -6,15 +13,6 @@
   border-color: grey;
   box-sizing: inherit;
 }
-
-.container{
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-grid-template-columns: auto auto auto;
-background-color: white;
-}
-
 
 .image-card{
 background: white;
@@ -39,48 +37,6 @@ border-radius: 1%;
 a {
   text-decoration: none;
   color: #4B5043;
-}
-
-.gallery-items{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  grid-template-columns: auto auto auto;
-
-}
-
-.pagination{
-  padding: 1rem;
-  text-align: center;
-  width: 100%;
-  float: left;
-}
-
-.pagination div{
-  display: inline-block;
-  text-align: center;
-  margin: 0 1rem;
-}
-
-
-.pagination .page{
-  color: #4B5043;
-}
-
-.pagination .prev, .pagination .next{
-color: #000;
-border: 0.1rem solid #000;
-font-size: 1rem;
-margin-left: 1rem;
-margin-right: 1rem;
-padding: 8px 15px;
-}
-
-
-.pagination .next.disabled, .pagination .prev.disabled{
-  border-color: #4B5043;
-  color: #4B5043;
-  pointer-events: none;
 }
 
 .image-card.hide{
