@@ -40,15 +40,17 @@ export default {
     showItems: async function(totalPages, totalImages) {
 
       await (Promise)
+
       const prev = document.querySelector('.prev');
       const next = document.querySelector('.next');
       const imageList = document.querySelector('.gallery-items').children;
       const maxItem = totalImages / totalPages;
       const page = document.querySelector('.page-num');
-
+      const pagination = Math.ceil(imageList.length / maxItem);
       let index = 1;
 
-      const pagination = Math.ceil(imageList.length / maxItem);
+
+      //determine if 'Prev' or 'Next' button can be activated
       const check = () => {
         if (index == pagination) {
           next.classList.add('disabled');
@@ -62,6 +64,7 @@ export default {
         }
       }
 
+// show set amount of images per page(s) according to user input or default
       const refreshImages = () => {
         for (let i = 0; i < imageList.length; i++) {
           imageList[i].classList.remove('show');
@@ -74,10 +77,11 @@ export default {
         page.innerHTML = index;
 
       }
-
+      check();
       refreshImages();
 
-      next.addEventListener('click', function() {
+//when 'Next' or 'Prev' button clicked, goTo the next / prev page displaying images
+        next.addEventListener('click', function() {
         index++;
         check();
         refreshImages();
@@ -89,11 +93,8 @@ export default {
       })
     },
   },
-  async created() {
-    await this.fetchImages();
-
-    await this.showItems();
-
+  created() {
+    this.fetchImages();
   }
 };
 </script>
