@@ -1,5 +1,9 @@
 # vs-test
 
+Finished project published on Heroku:
+
+https://image-gallery-using-vue.herokuapp.com/
+
 ## Project setup
 ```
 npm install
