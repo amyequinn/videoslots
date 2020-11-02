@@ -14,8 +14,8 @@ export default {
 
   data() {
     return{
-      totalPages: 10,
-      totalImages: 20
+      totalPages: 3,
+      totalImages: 27
     }
   },
 
@@ -36,6 +36,9 @@ export default {
     let total = document.getElementById('imageNumbers').value
     if(total > 0 && total <= 100){
     this.$emit('send-data', this.totalPages, this.totalImages)
+    }
+    else {
+    alert("1 - 100 only")
     }
     },
   },

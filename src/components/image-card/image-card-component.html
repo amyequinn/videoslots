@@ -1,6 +1,7 @@
 <ImagesMenu @send-data="fetchImages" />
 
 <div class="container image-list">
+  <div class="gallery-items">
   <div class="row image-card" v-for="(image) in data">
     <a v-bind:href="image.download_url.slice(0, this.image.length-10) + '/367/267'" target="_blank">
       <img class="image" v-bind:src="image.download_url.slice(0, this.image.length-10) + '/367/267'" />
@@ -8,4 +9,12 @@
       <h3 class="id">#{{image.id}}</h3>
     </a>
   </div>
+  </div>
+
+      <div class="pagination">
+        <button class="prev">Prev</button>
+        <div class="page"><span class="page-num"></span></div>
+        <button class="next">Next</button>
+      </div>
+
 </div>
