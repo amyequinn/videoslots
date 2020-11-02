@@ -15,8 +15,8 @@ export default {
 
   data() {
     return {
-      totalPages: 3,
-      totalImages: 27
+      totalPages: 5,
+      totalImages: 50
     }
   },
 

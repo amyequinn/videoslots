@@ -52,6 +52,10 @@ export default {
 
       //determine if 'Prev' or 'Next' button can be activated
       const check = () => {
+      if(totalPages > totalImages){
+      totalPages = 1;
+      this.fetchImages(totalPages, totalImages)
+      }
         if (index == pagination) {
           next.classList.add('disabled');
         } else {
